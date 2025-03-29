@@ -1,0 +1,322 @@
+.checkout-container {
+  max-width: 1400px;
+  margin: 5rem auto 2.5rem;
+  padding: clamp(1rem, 2vw, 2rem);
+  background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Arial', sans-serif;
+}
+
+@media (min-width: 1024px) {
+  .checkout-container {
+    flex-direction: row;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+/* Left Section */
+.left-section {
+  width: 100%;
+  background: white;
+  border-radius: 1rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 1024px) {
+  .left-section {
+    width: 65%;
+  }
+}
+
+.step {
+  padding: clamp(1rem, 2vw, 1.5rem);
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+}
+
+.step h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 800;
+  color: #1e40af;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+.step h3::after {
+  content: '';
+  width: 40px;
+  height: 3px;
+  background: #f97316;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+}
+
+.step h4 {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.step input,
+.step textarea,
+.step select {
+  width: 100%;
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: #1f2937;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+}
+
+.step input:focus,
+.step textarea:focus,
+.step select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.step input::placeholder,
+.step textarea::placeholder {
+  color: #9ca3af;
+}
+
+.step button {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1.5rem, 2vw, 2rem);
+  border: none;
+  border-radius: 2rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.step button:hover {
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+  transform: scale(1.05);
+}
+
+.step .bg-orange-500 {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+}
+
+.step .bg-orange-500:hover {
+  background: linear-gradient(135deg, #ea580c, #c2410c);
+}
+
+.step .bg-green-500 {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.step .bg-green-500:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+/* Address List */
+.address-list .address-item {
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+}
+
+.address-list .address-item:hover {
+  border-color: #93c5fd;
+}
+
+.address-list .address-item.border-blue-500 {
+  border-color: #2563eb;
+  background: #eff6ff;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+}
+
+.address-list label {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.address-list input[type="radio"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.address-list p {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: #1f2937;
+}
+
+.address-list .font-bold {
+  font-weight: 700;
+}
+
+/* Quantity Section */
+.quantity-section select {
+  width: clamp(4rem, 10vw, 5rem);
+}
+
+/* Right Section */
+.right-section {
+  width: 100%;
+  background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+@media (min-width: 1024px) {
+  .right-section {
+    width: 35%;
+  }
+}
+
+.right-section h3 {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 800;
+  color: #1e40af;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+.right-section h3::after {
+  content: '';
+  width: 40px;
+  height: 3px;
+  background: #f97316;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.price-item p {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: #6b7280;
+}
+
+.price-item .text-green-500 {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.price-item.font-bold p {
+  font-weight: 800;
+  color: #1f2937;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.right-section hr {
+  border: none;
+  border-top: 2px dashed #d1d5db;
+  margin: 1.25rem 0;
+}
+
+/* Back Button */
+.back-button {
+  margin-top: 1.5rem;
+}
+
+.back-button button {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  color: white;
+  padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1.5rem, 2vw, 2rem);
+  border: none;
+  border-radius: 2rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button button:hover {
+  background: linear-gradient(135deg, #4b5563, #374151);
+  transform: scale(1.05);
+}
+
+/* Media Queries for Extra Responsiveness */
+@media (max-width: 768px) {
+  .checkout-container {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .step {
+    padding: 1rem;
+  }
+
+  .step h3 {
+    font-size: 1.25rem;
+  }
+
+  .step button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .address-list .address-item {
+    padding: 0.75rem;
+  }
+
+  .right-section {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .step input,
+  .step textarea,
+  .step select {
+    padding: 0.5rem;
+  }
+
+  .step button,
+  .back-button button {
+    padding: 0.75rem 1rem;
+  }
+
+  .address-list input[type="radio"] {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .price-item p {
+    font-size: 0.875rem;
+  }
+
+  .price-item.font-bold p {
+    font-size: 1rem;
+  }
+}

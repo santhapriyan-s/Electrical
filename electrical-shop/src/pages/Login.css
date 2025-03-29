@@ -1,0 +1,163 @@
+/* Apply background to the entire page */
+body {
+  background: url('/s.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: auto; /* Allow scrolling if content overflows */
+}
+
+/* Container styling */
+.login-container {
+  max-width: 480px;
+  margin: 5rem auto; /* Space for fixed navbar */
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+  min-height: calc(100vh - 10rem); /* Adjust for margins */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-container h2 {
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+  color: #1e40af; /* Dark blue */
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Error Message (Optional) */
+.login-container .error {
+  color: #ef4444; /* Red */
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  background-color: #fee2e2; /* Light red background */
+  border-radius: 0.5rem;
+}
+
+/* Form Styling */
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.login-container div {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937; /* Dark gray */
+  margin-bottom: 0.5rem;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: #f9fafb; /* Light gray input background */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container input:focus {
+  outline: none;
+  border-color: #2563eb; /* Blue */
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.login-container input::placeholder {
+  color: #9ca3af; /* Light gray placeholder */
+}
+
+/* Login Button */
+.login-container button {
+  background-color: #2563eb; /* Blue */
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-container button:hover {
+  background-color: #1e40af; /* Darker blue */
+  transform: translateY(-2px);
+}
+
+/* Google Sign-In Button */
+.google-btn {
+  background-color: #ffffff; /* White */
+  color: #1f2937; /* Dark gray */
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.google-btn:hover {
+  background-color: #f3f4f6; /* Light gray */
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Signup Link */
+.login-container p {
+  font-size: 1rem;
+  color: #6b7280; /* Medium gray */
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.login-container a {
+  color: #f97316; /* Orange */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-container a:hover {
+  color: #ea580c; /* Darker orange */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .login-container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .login-container h2 {
+    font-size: 1.5rem; /* 24px */
+  }
+
+  .login-container input,
+  .login-container button,
+  .login-container .google-btn {
+    padding: 0.5rem;
+  }
+}

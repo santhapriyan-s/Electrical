@@ -1,0 +1,86 @@
+/* src/components/Sidebar.css */
+
+/* Sidebar container */
+.profile-sidebar {
+    width: 250px; /* Fixed width for the sidebar */
+    background-color: #fff; /* White background for the sidebar */
+    padding: 20px; /* Padding inside the sidebar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  /* User header in the sidebar */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Space below the header */
+  }
+  
+  /* User avatar */
+  .profile-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #2874f0; /* Flipkart's blue color for the avatar background */
+    border-radius: 50%; /* Circular avatar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; /* Space between avatar and username */
+  }
+  
+  /* Username text */
+  .profile-header p {
+    font-size: 16px;
+    color: #333; /* Dark gray text */
+    font-weight: 500; /* Medium weight for emphasis */
+  }
+  
+  /* Navigation menu */
+  .profile-nav {
+    display: flex;
+    flex-direction: column; /* Stack navigation items vertically */
+  }
+  
+  /* Section headers (e.g., "Account Settings", "Payments") */
+  .profile-nav h4 {
+    font-size: 14px;
+    color: #878787; /* Light gray for section headers */
+    margin: 10px 0; /* Space above and below section headers */
+    text-transform: uppercase; /* Uppercase for section headers */
+  }
+  
+  /* Navigation items (links) */
+  .profile-nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px; /* Padding for clickable area */
+    color: #333; /* Dark gray text */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 14px;
+    border-radius: 4px; /* Rounded corners for hover/active states */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover/active effects */
+  }
+  
+  /* Icon spacing in navigation items */
+  .profile-nav-item svg {
+    margin-right: 10px; /* Space between icon and text */
+  }
+  
+  /* Hover and active states for navigation items */
+  .profile-nav-item:hover,
+  .profile-nav-item.active {
+    background-color: #2874f0; /* Flipkart's blue for hover/active background */
+    color: #fff; /* White text on hover/active */
+  }
+  
+  /* Balance text (e.g., "₹0" for Gift Cards) */
+  .profile-nav-item .balance {
+    margin-left: auto; /* Push balance to the right */
+    font-size: 12px;
+    color: inherit; /* Inherit color from parent (white when active/hovered) */
+  }
+  
+  /* Logout button styling */
+  .logout-btn {
+    margin-top: 20px; /* Space above the logout button */
+  }

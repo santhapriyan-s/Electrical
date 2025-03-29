@@ -1,0 +1,30 @@
+/* src/pages/Reviews.css */
+
+/* Reviews section container */
+.profile-section {
+    padding: 20px;
+  }
+  
+  /* Empty state styling */
+  .empty-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px; /* Ensure the empty state takes up some vertical space */
+    text-align: center;
+  }
+  
+  /* Heading for the empty state (e.g., "No Reviews & Ratings") */
+  .empty-section h3 {
+    font-size: 24px;
+    color: #333; /* Dark gray for the heading */
+    font-weight: 500; /* Medium weight for emphasis */
+    margin-bottom: 10px;
+  }
+  
+  /* Paragraph for the empty state (e.g., "You haven't rated or reviewed any product yet!") */
+  .empty-section p {
+    font-size: 16px;
+    color: #878787; /* Light gray for the description */
+  }

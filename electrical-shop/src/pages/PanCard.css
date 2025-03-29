@@ -1,0 +1,310 @@
+/* src/pages/PanCard.css */
+
+/* PAN card section container */
+.profile-section {
+    padding: 20px;
+    max-width: 500px; /* Limit the form width for better readability */
+  }
+  
+  /* Section heading */
+  .profile-section h3 {
+    font-size: 18px;
+    color: #333; /* Dark gray for the heading */
+    font-weight: 500; /* Medium weight for emphasis */
+    margin-bottom: 20px;
+  }
+  
+  /* Form group (label and input) */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Form labels */
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  /* Form inputs (text and file) */
+  .form-group input[type="text"],
+  .form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }
+  
+  /* File input specific styles */
+  .form-group input[type="file"] {
+    padding: 5px; /* Adjust padding for file input */
+  }
+  
+  /* "No file chosen" text */
+  .form-group p {
+    font-size: 12px;
+    color: #878787; /* Light gray for the "No file chosen" text */
+    margin-top: 5px;
+  }
+  
+  /* Hover and focus effects for inputs */
+  .form-group input:hover,
+  .form-group input:focus {
+    border-color: #2874f0; /* Flipkart's blue on hover/focus */
+    outline: none;
+  }
+  
+  /* Disclaimer text */
+  .disclaimer {
+    font-size: 12px;
+    color: #555; /* Medium gray for the disclaimer */
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  /* "Upload" button */
+  .upload-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #fb641b; /* Flipkart's orange for the button */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-bottom: 10px;
+  }
+  
+  /* Hover effect for "Upload" button */
+  .upload-btn:hover {
+    background-color: #e55a14; /* Darker orange on hover */
+  }
+  
+  /* "Read Terms & Conditions" link */
+  .terms-link {
+    display: block;
+    font-size: 12px;
+    color: #2874f0; /* Flipkart's blue for the link */
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.2s ease;
+  }
+  
+  /* Hover effect for "Read Terms & Conditions" link */
+  .terms-link:hover {
+    color: #1a5dc7; /* Darker blue on hover */
+    text-decoration: underline;
+  }
+  /* PanCard.css */
+
+.profile-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.section-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #212121;
+  margin: 0;
+}
+
+.edit-btn {
+  background-color: transparent;
+  color: #2874f0;
+  border: 1px solid #2874f0;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-btn:hover {
+  background-color: #f0f7ff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #212121;
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input[type="text"]:focus {
+  border-color: #2874f0;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(40, 116, 240, 0.2);
+}
+
+.file-upload {
+  margin-bottom: 25px;
+}
+
+.file-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-input-wrapper input[type="file"] {
+  display: none;
+}
+
+.file-upload-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border: 1px solid #e0e0e0;
+}
+
+.file-upload-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.file-name {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.disclaimer {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.upload-btn {
+  background-color: #2874f0;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.upload-btn:hover:not(:disabled) {
+  background-color: #1a66d6;
+}
+
+.upload-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  color: #2874f0;
+  border: 1px solid #2874f0;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-btn:hover {
+  background-color: #f0f7ff;
+}
+
+.terms-link {
+  display: block;
+  margin-top: 25px;
+  color: #2874f0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+.pan-details-view {
+  margin-bottom: 20px;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-label {
+  font-weight: 500;
+  color: #212121;
+  width: 120px;
+}
+
+.detail-value {
+  color: #555;
+  flex: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-section {
+    padding: 15px;
+  }
+  
+  .file-input-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .upload-btn, .cancel-btn {
+    width: 100%;
+  }
+}
