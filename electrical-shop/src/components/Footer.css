@@ -1,49 +1,57 @@
 .footer {
-  background-color: #1a73e8;
-  color: white;
-  padding: 2rem 1rem;
-  text-align: center;
-  width: 100%;
   position: relative;
-  bottom: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background-color: #0033cc;
+  color: white;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  z-index: 1;
 }
 
-.footer-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.footer-inner {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.footer-section {
-  margin: 1rem;
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 1.5rem;
 }
 
-.footer-section h3 {
-  font-size: 1.5rem;
+.footer-column h3,
+.footer-column h4 {
   margin-bottom: 1rem;
 }
 
-.footer-section h4 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+.footer-column p {
+  margin: 0.3rem 0;
 }
 
-.footer-section ul {
+.footer-column ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.footer-section ul li {
-  margin: 0.5rem 0;
+.footer-column li {
+  margin: 0.3rem 0;
 }
 
-.footer-section ul li a {
+.footer-column a {
   color: white;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.footer-section ul li a:hover {
-  text-decoration: underline;
+.footer-column a:hover {
+  color: #ffcc00;
 }

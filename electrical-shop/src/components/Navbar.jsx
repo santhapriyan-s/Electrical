@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
 import { FaInfoCircle, FaBoxOpen, FaShoppingCart, FaUserAlt } from 'react-icons/fa';
-import { FiLogIn, FiLogOut, FiUser, FiShoppingBag, FiHeart, FiGift, FiCreditCard } from 'react-icons/fi'; // Added icons for dropdown
+import { FiLogIn, FiLogOut, FiUser, FiShoppingBag, FiHeart, FiCreditCard } from 'react-icons/fi';
 import './Navbar.css';
 
 const Navbar = ({ user, setUser }) => {
@@ -22,7 +22,10 @@ const Navbar = ({ user, setUser }) => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <span className="navbar-logo">SR ELECTRICALS</span>
+        <Link to="/main" className="navbar-logo">
+          <img src="/t.jpg" alt="Logo" className="logo-img" />
+          <span className="logo-text">ELECTRICALS</span>
+        </Link>
         <div className="navbar-links">
           <Link to="/main" className="navbar-link">
             <AiFillHome className="navbar-icon" /> <span>Home</span>

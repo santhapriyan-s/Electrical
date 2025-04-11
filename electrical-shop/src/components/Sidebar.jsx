@@ -45,12 +45,7 @@ const Sidebar = ({ user, setUser }) => {
         >
           <FiMapPin /> Manage Addresses
         </NavLink>
-        <NavLink
-          to="/profile/pan-card"
-          className={({ isActive }) => `profile-nav-item ${isActive ? "active" : ""}`}
-        >
-          <FiCreditCard /> PAN Card Information
-        </NavLink>
+       
         <h4>Payments</h4>
         <NavLink
           to="/profile/gift-cards"

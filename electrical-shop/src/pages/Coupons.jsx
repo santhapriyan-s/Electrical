@@ -4,13 +4,48 @@ import "./Coupons.css";
 
 const Coupons = ({ user, setUser }) => {
   const coupons = [
-    { code: "Mantra L1FPO @ 2699", discount: "Extra ₹100 OFF", validTill: "11:59 PM, 31 Mar, 2025" },
-    { code: "Extra ₹100 OFF", discount: "Extra ₹100 OFF", validTill: "11:59 PM, 31 Mar, 2025" },
-    { code: "Extra ₹150 OFF", discount: "Extra ₹150 OFF", validTill: "11:59 PM, 31 Mar, 2025" },
-    { code: "Extra ₹500 OFF", discount: "Extra ₹500 OFF", validTill: "11:59 PM, 31 Mar, 2025" },
-    { code: "Extra ₹300 OFF", discount: "Extra ₹300 OFF", validTill: "11:59 PM, 31 Mar, 2025" },
-    { code: "Extra ₹150 OFF", discount: "Extra ₹150 OFF", validTill: "11:59 PM, 31 Mar, 2025" },
-    { code: "Extra ₹250 OFF", discount: "Extra ₹250 OFF", validTill: "11:59 PM, 31 Mar, 2025" },
+    { 
+      code: "SRE100", 
+      title: "Festive Season Offer", 
+      discount: "₹100 OFF on orders above ₹999", 
+      validTill: "31 Dec 2025",
+      category: "All Products"
+    },
+    { 
+      code: "SRE150APP", 
+      title: "App Exclusive", 
+      discount: "₹150 OFF on app orders above ₹1499", 
+      validTill: "30 Nov 2025",
+      category: "Mobile App Only"
+    },
+    { 
+      code: "SRE500ELEC", 
+      title: "Electronics Special", 
+      discount: "₹500 OFF on electronics above ₹4999", 
+      validTill: "15 Jan 2026",
+      category: "Electronics"
+    },
+    { 
+      code: "SRE300HOME", 
+      title: "Home Appliances Deal", 
+      discount: "₹300 OFF on home appliances", 
+      validTill: "28 Feb 2026",
+      category: "Home Appliances"
+    },
+    { 
+      code: "SRE200FIRST", 
+      title: "New Customer Offer", 
+      discount: "₹200 OFF on first order", 
+      validTill: "31 Mar 2026",
+      category: "First Order"
+    },
+    { 
+      code: "SRE1000FEST", 
+      title: "Festive Mega Sale", 
+      discount: "₹1000 OFF on orders above ₹7999", 
+      validTill: "10 Oct 2025",
+      category: "Festive Special"
+    },
   ];
 
   useEffect(() => {
@@ -21,20 +56,37 @@ const Coupons = ({ user, setUser }) => {
   }, []);
 
   return (
-    <div className="profile-page">
-      <div className="profile-container">
-        <div className="profile-content">
-          <div className="profile-section">
-            <h3>Available Coupons</h3>
-            {coupons.map((coupon, index) => (
-              <div key={index} className="coupon-item">
-                <p><strong>{coupon.code}</strong></p>
-                <p>{coupon.discount} (Valid till: {coupon.validTill})</p>
-                <NavLink to="#" className="view-tc-link">View T&C</NavLink>
+    <div className="coupons-page">
+      <div className="coupons-header">
+        <h2>My Coupons</h2>
+        <p>Available discount coupons for your next purchase</p>
+      </div>
+
+      <div className="coupons-grid">
+        {coupons.map((coupon, index) => (
+          <div key={index} className="coupon-card">
+            <div className="coupon-badge">{coupon.category}</div>
+            <div className="coupon-content">
+              <h3>{coupon.title}</h3>
+              <div className="coupon-code">
+                <span>Code: </span>
+                <strong>{coupon.code}</strong>
               </div>
-            ))}
+              <p className="coupon-discount">{coupon.discount}</p>
+              <div className="coupon-validity">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Valid till: {coupon.validTill}
+              </div>
+            </div>
+            <div className="coupon-actions">
+              <button className="copy-btn">COPY CODE</button>
+              <NavLink to="#" className="terms-link">View Terms</NavLink>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

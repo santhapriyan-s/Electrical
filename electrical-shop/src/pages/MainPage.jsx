@@ -21,20 +21,21 @@ const MainPage = ({ user }) => {
   };
 
   const categories = [
-    { name: "Lighting", image: "/a.jpg", link: "/products?category=lighting" },
-    { name: "Wiring", image: "/l.jpg", link: "/products?category=wiring" },
-    { name: "Switches", image: "/k.jpg", link: "/products?category=switches" },
+    { name: "Circuit Breaker", image: "/d.jpg", link: "/products?category=circuit breaker" },
+    { name: "Electric Drill", image: "/h.jpg", link: "/products?category=electric drill" },
+    { name: "Cable Tester", image: "/i.jpg", link: "/products?category=cable tester" },
   ];
 
   const testimonials = [
-    { name: "John Doe", text: "SR Electricals provided top-quality products and excellent service!" },
-    { name: "Jane Smith", text: "Fast delivery and reliable switches. Highly recommend!" },
-    { name: "Mike Johnson", text: "Affordable prices and great customer support." },
+    { name: "Pooja shree", text: "SR Electricals provided top-quality products and excellent service!" },
+    { name: "Santhapriyan", text: "Fast delivery and reliable switches. Highly recommend!" },
+    { name: "Surya", text: "Affordable prices and great customer support." },
   ];
 
   const deals = [
     { name: "LED Bulb", price: 10, discountPrice: 8, image: "/a.jpg", endTime: "2025-03-30T23:59:59" },
     { name: "Smart Plug", price: 25, discountPrice: 20, image: "/c.jpg", endTime: "2025-03-28T23:59:59" },
+    { name: "Extension Cord",price: 15,dicountPrice: 8,image: "/b.jpg", endTime: "2025-03-27T23:59:59" },
   ];
 
   const [timeLeft, setTimeLeft] = useState({});
@@ -89,7 +90,7 @@ const MainPage = ({ user }) => {
       email: e.target[1].value,
       message: e.target[2].value,
     });
-    alert("Message sent! We’ll get back to you soon.");
+    alert("Message sent! We'll get back to you soon.");
     e.target.reset();
   };
 
@@ -98,168 +99,167 @@ const MainPage = ({ user }) => {
   };
 
   return (
-    <div className="main-page" style={{ overflowX: 'hidden' }}>
-    {/* Hero Section - Remove any extra containers around it */}
-    <header className="hero-section">
-      <div className="hero-content">
-        <h1>SR Electricals</h1>
-        <p>Reliable Electrical Solutions for Every Need</p>
-        <Link to="/products" className="hero-cta">Shop Now</Link>
-      </div>
-    </header>
+    <div className="main-page">
+      {/* Hero Section (Full Bleed) */}
+      <header className="hero-section full-bleed">
+        <div className="main-content">
+          <div className="hero-content">
+          <h1>Original and Quality Electrical Products</h1>
+          <p>We provide genuine electrical components and premium-quality products that meet industry standards. Our inventory includes durable wiring, reliable circuit protection devices, and energy-efficient solutions designed for both residential and commercial applications. Each product undergoes rigorous quality testing to ensure safety and optimal performance.</p>
+            <Link to="/products" className="hero-cta">Shop Now</Link>
+          </div>
+        </div>
+      </header>
 
       {/* Featured Deals Section */}
       <section className="deals-section">
-        <h2>Hot Deals</h2>
-        <div className="deals-grid">
-          {deals.map((deal, index) => (
-            <div key={index} className="deal-card">
-              <img src={deal.image} alt={deal.name} />
-              <h3>{deal.name}</h3>
-              <p>
-                <span className="original-price">Rs.{deal.price}</span>
-                <span className="discount-price">Rs.{deal.discountPrice}</span>
-              </p>
-              <p className="deal-timer">Ends in: {timeLeft[deal.name] || "Calculating..."}</p>
-              <Link to="/products" className="deal-link">Grab Now</Link>
-            </div>
-          ))}
+        <div className="main-content">
+          <h2>Hot Deals</h2>
+          <div className="deals-grid">
+            {deals.map((deal, index) => (
+              <div key={index} className="deal-card">
+                <img src={deal.image} alt={deal.name} />
+                <h3>{deal.name}</h3>
+                <p>
+                  <span className="original-price">Rs.{deal.price}</span>
+                  <span className="discount-price">Rs.{deal.discountPrice}</span>
+                </p>
+                <p className="deal-timer">Ends in: {timeLeft[deal.name] || "Calculating..."}</p>
+                <Link to="/products" className="deal-link">Grab Now</Link>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Featured Products Slider */}
-      <section className="featured-section">
-        <h2>Our Top Products</h2>
-        <Slider {...sliderSettings}>
-          {categories.map((category, index) => (
-            <div key={index} className="slide">
-              <img src={category.image} alt={category.name} />
+      <section className="featured-section full-bleed">
+        <div className="main-content">
+          <h3>Our Top Products</h3>
+          <Slider {...sliderSettings}>
+            {categories.map((category, index) => (
+              <div key={index} className="slide">
+              <div className="slide-image-container">
+                <img src={category.image} alt={category.name} />
+              </div>
               <div className="slide-content">
-                <h3>{category.name}</h3>
+                <h2>{category.name}</h2>
                 <p>Explore our premium {category.name.toLowerCase()} collection.</p>
                 <Link to={category.link} className="slide-link">View More</Link>
               </div>
             </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </section>
 
-      {/* Product Categories with Filters */}
+      {/* Product Categories */}
       <section className="categories-section">
-        <h2>Explore Categories</h2>
-        <div className="category-filters">
-          <button className="filter-btn active">All</button>
-          {categories.map((category, index) => (
-            <button key={index} className="filter-btn">{category.name}</button>
-          ))}
-        </div>
-        <div className="categories-grid">
-          {categories.map((category, index) => (
-            <div key={index} className="category-card">
-              <img src={category.image} alt={category.name} />
-              <h3>{category.name}</h3>
-              <Link to={category.link} className="category-link">Shop {category.name}</Link>
-            </div>
-          ))}
+        <div className="main-content">
+          <h2>Explore Categories</h2>
+          
+          <div className="categories-grid">
+            {categories.map((category, index) => (
+              <div key={index} className="category-card">
+                <img src={category.image} alt={category.name} />
+                <h3>{category.name}</h3>
+                <Link to={category.link} className="category-link">Shop {category.name}</Link>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="benefits-section">
-        <h2>Why Choose Us?</h2>
-        <div className="benefits-container">
-          <div className="benefit-card">
-            <h3>Reliable Products</h3>
-            <p>Built to last with top-grade materials.</p>
-          </div>
-          <div className="benefit-card">
-            <h3>Quick Delivery</h3>
-            <p>Shipped to you within 48 hours.</p>
-          </div>
-          <div className="benefit-card">
-            <h3>Customer Support</h3>
-            <p>24/7 help from our expert team.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="testimonials-section">
-        <h2>What Our Customers Say</h2>
-        <div className="testimonials-container">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="testimonial-card">
-              <p className="testimonial-text">"{testimonial.text}"</p>
-              <p className="testimonial-name">- {testimonial.name}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Social Media Feed */}
-      <section className="social-feed-section">
-        <h2>Follow Us on Social Media</h2>
-        <div className="social-feed">
-          <div className="social-post">
-            <img src="/social1.jpg" alt="Social Post 1" />
-            <p>Check out our latest lighting collection! #SRElectricals</p>
-          </div>
-          <div className="social-post">
-            <img src="/social2.jpg" alt="Social Post 2" />
-            <p>Customer setup with our smart plugs. #SmartHome</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter Signup */}
-      <section className="newsletter-section">
-        <h2>Stay Updated</h2>
-        <p>Subscribe to our newsletter for the latest offers and updates.</p>
-        <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
-          <input type="email" name="email" placeholder="Enter your email" required />
-          <button type="submit" className="newsletter-btn">Subscribe</button>
-        </form>
-      </section>
-
-      {/* About Section */}
-      <section className="about-section">
-        <h2>About SR Electricals</h2>
-        <p>
-          At SR Electricals, we’ve been powering homes and businesses with quality products since 2010.
-          Our mission is to deliver safe, efficient, and affordable electrical solutions.
-        </p>
-        <Link to="/about" className="about-btn">Learn More</Link>
-      </section>
-
-      {/* Contact Section with Map */}
-      <section className="contact-section">
-  <h2>Get in Touch</h2>
-  <div className="contact-container">
-    <div className="contact-info">
-      <p>Email: <a href="mailto:support@srelectricals.com">support@srelectricals.com</a></p>
-      <p>Phone: <a href="tel:+919876543210">+91 9876543210</a></p>
-      <form className="contact-form" onSubmit={handleContactSubmit}>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="4" required></textarea>
-        <button type="submit" className="contact-btn">Send Message</button>
-      </form>
-    </div>
-    <div className="contact-map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.463869392741!2d77.97805431480247!3d10.36731299259875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b076bd8c8f4b6e9%3A0x4e7c15b271eecfca!2sDindigul%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sus!4v1677654321098!5m2!1sen!2sus"
-        width="100%"
-        height="300"
-        style={{ border: 0 }}
-        allowFullScreen=""
-        loading="lazy"
-        title="SR Electricals Location, Dindigul"
-      ></iframe>
+      <section className="benefits-section full-bleed">
+  <div className="main-content">
+    <h2>Why Choose Us?</h2>
+    <div className="benefits-container">
+      <div className="benefit-card">
+        <h3>Reliable Products</h3>
+        <p>Built to last with top-grade materials.</p>
+      </div>
+      <div className="benefit-card">
+        <h3>Quick Delivery</h3>
+        <p>Shipped to you within 48 hours.</p>
+      </div>
+      <div className="benefit-card">
+        <h3>Customer Support</h3>
+        <p>24/7 help from our expert team.</p>
+      </div>
+      <div className="benefit-card">
+        <h3>Competitive Pricing</h3>
+        <p>Quality products at affordable rates.</p>
+      </div>
+      <div className="benefit-card">
+        <h3>Easy Returns</h3>
+        <p>30-day hassle-free return policy.</p>
+      </div>
+      <div className="benefit-card">
+        <h3>Expert Installation</h3>
+        <p>Professional setup services available.</p>
+      </div>
     </div>
   </div>
 </section>
 
+      {/* Testimonials Section */}
+<section className="testimonials-section">
+  <div className="main-content">
+    <h2>What Our Customers Say</h2>
+    <div className="testimonials-container">
+      {testimonials.map((testimonial, index) => (
+        <div key={index} className="testimonial-card">
+          {testimonial.rating && (
+            <div className="testimonial-rating">
+              {'★'.repeat(testimonial.rating)}
+              {'☆'.repeat(5 - testimonial.rating)}
+            </div>
+          )}
+          <p className="testimonial-text">"{testimonial.text}"</p>
+          <p className="testimonial-name">- {testimonial.name}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+      {/* Newsletter Section (Full Bleed) */}
+      <section className="contact-section">
+  <div className="main-content">
+    <h2>Visit Us</h2>
+    <div className="contact-container">
       
+      
+
+      <div className="form-map-container">
+        <form className="contact-form">
+          <h3>Quick Enquiry</h3>
+          <input type="text" placeholder="Your Name" required />
+          <input type="tel" placeholder="Phone Number" required />
+          <textarea placeholder="Your Electrical Requirements" rows="4" required></textarea>
+          <button type="submit" className="contact-btn">
+            <i className="fas fa-paper-plane"></i> Send Enquiry
+          </button>
+        </form>
+      
+        <div className="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.463869392741!2d77.97805431480247!3d10.36731299259875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b076bd8c8f4b6e9%3A0x4e7c15b271eecfca!2sSri%20Pavun%20Complex%2C%20High%20School%20Road%2C%20Chinnalapatti%2C%20Dindigul%2C%20Tamil%20Nadu%20624301!5e0!3m2!1sen!2sin!4v1677654321098!5m2!1sen!2sin&output=embed&zoom=16"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            aria-hidden="false"
+            tabIndex="0"
+            title="SR Electricals Location"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Back-to-Top Button */}
       {showBackToTop && (

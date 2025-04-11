@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(90deg, #1e40af, #2563eb); /* Blue gradient */
+  background: linear-gradient(90deg, #0b0b0b, #0c0c0c); /* Blue gradient */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   padding: 1rem 0;
@@ -29,7 +29,7 @@
 }
 
 .navbar-logo:hover {
-  color: #f97316; /* Orange on hover */
+  color: #f3df06; /* Orange on hover */
 }
 
 /* Links Container */
@@ -55,7 +55,7 @@
 
 .navbar-link:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  color: #f97316;
+  color: #ecbe06;
   transform: translateY(-2px);
 }
 
@@ -208,4 +208,32 @@
   .navbar-login-btn {
     padding: 0.5rem 1rem;
   }
+}
+/* Logo Image and Text */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.logo-text {
+  color: white;
+}
+
+.navbar-logo:hover .logo-text {
+  color: #f97316;
 }

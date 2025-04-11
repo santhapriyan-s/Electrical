@@ -54,6 +54,7 @@ const Cart = ({ cart, setCart }) => {
             className="search-input"
           />
         </div>
+        <div className="cart-items-container">
         {filteredCart.length === 0 ? (
           <p>
             {searchTerm
@@ -96,6 +97,7 @@ const Cart = ({ cart, setCart }) => {
           </div>
           ))
         )}
+        </div>
       </div>
 
       {/* Right Section: Price Details */}

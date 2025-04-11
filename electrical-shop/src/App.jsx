@@ -26,6 +26,7 @@ import Checkout from "./pages/Checkout";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import "./App.css";
+import "./index.css";
 
 const RouterWrapper = ({ children }) => {
   const location = useLocation();
@@ -99,122 +100,146 @@ const App = () => {
   return (
     <Router>
       <RouterWrapper>
-        <div className="app-container">
+        <div className="full-page-cover">
+          {/* Edge Borders */}
+          <div className="edge-top"></div>
+          <div className="edge-bottom"></div>
+          <div className="edge-left"></div>
+          <div className="edge-right"></div>
+          
+          {/* Navbar - Only shown when user is logged in */}
           {user && <Navbar user={user} setUser={setUser} cartCount={cart.length} />}
-          <main>
-            <Routes>
-              <Route
-                path="/login"
-                element={
-                  <AuthRoute>
-                    <Login setUser={setUser} />
-                  </AuthRoute>
-                }
-              />
-              <Route
-                path="/signup"
-                element={
-                  <AuthRoute>
-                    <Signup setUser={setUser} />
-                  </AuthRoute>
-                }
-              />
-              <Route
-                path="/main"
-                element={
-                  <ProtectedRoute>
-                    <MainPage user={user} />
-                  </ProtectedRoute>
-                }
-              />
-              <Route path="/about" element={<About />} />
-              <Route
-                path="/products"
-                element={
-                  <ProtectedRoute>
-                    <ProductList 
-                      addToCart={addToCart} 
-                      addToFavourites={addToFavourites} 
-                      user={user}
-                    />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/products/:id"
-                element={
-                  <ProtectedRoute>
-                    <ProductDetails 
-                      addToCart={addToCart} 
-                      addToFavourites={addToFavourites} 
-                      user={user}
-                    />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/cart"
-                element={
-                  <ProtectedRoute>
-                    <Cart
-                      cart={cart}
-                      setCart={setCart}
-                      favourites={favourites}
-                      setFavourites={setFavourites}
-                      user={user}
-                    />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/profile/*"
-                element={
-                  <ProtectedRoute>
-                    <div className="profile-page">
-                      <div className="profile-container">
-                        <Sidebar user={user} setUser={setUser} />
-                        <div className="profile-content">
-                          <Routes>
-                            <Route path="/" element={<Profile user={user} setUser={setUser} />} />
-                            <Route path="orders" element={<Orders user={user} />} />
-                            <Route path="manage-address" element={<ManageAddress user={user} />} />
-                            <Route path="pan-card" element={<PanCard user={user} />} />
-                            <Route path="gift-cards" element={<GiftCards user={user} />} />
-                            <Route path="saved-upi" element={<SavedUPI user={user} />} />
-                            <Route path="saved-cards" element={<SavedCards user={user} />} />
-                            <Route path="coupons" element={<Coupons user={user} />} />
-                            <Route path="reviews" element={<Reviews user={user} />} />
-                            <Route path="notifications" element={<Notifications user={user} />} />
-                            <Route 
-                              path="wishlist" 
-                              element={
-                                <Wishlist 
-                                  user={user} 
-                                  favourites={favourites} 
-                                  setFavourites={setFavourites} 
-                                />
-                              } 
-                            />
-                            <Route path="*" element={<div>Profile Section: Page Not Found</div>} />
-                          </Routes>
+          
+          {/* Main Content Container */}
+          <div className="main-container">
+            <main>
+              <Routes>
+                {/* Authentication Routes */}
+                <Route
+                  path="/login"
+                  element={
+                    <AuthRoute>
+                      <Login setUser={setUser} />
+                    </AuthRoute>
+                  }
+                />
+                <Route
+                  path="/signup"
+                  element={
+                    <AuthRoute>
+                      <Signup setUser={setUser} />
+                    </AuthRoute>
+                  }
+                />
+                
+                {/* Main Application Routes */}
+                <Route
+                  path="/main"
+                  element={
+                    <ProtectedRoute>
+                      <MainPage user={user} />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route path="/about" element={<About />} />
+                
+                {/* Product Routes */}
+                <Route
+                  path="/products"
+                  element={
+                    <ProtectedRoute>
+                      <ProductList 
+                        addToCart={addToCart} 
+                        addToFavourites={addToFavourites} 
+                        user={user}
+                      />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/products/:id"
+                  element={
+                    <ProtectedRoute>
+                      <ProductDetails 
+                        addToCart={addToCart} 
+                        addToFavourites={addToFavourites} 
+                        user={user}
+                      />
+                    </ProtectedRoute>
+                  }
+                />
+                
+                {/* Cart & Checkout */}
+                <Route
+                  path="/cart"
+                  element={
+                    <ProtectedRoute>
+                      <Cart
+                        cart={cart}
+                        setCart={setCart}
+                        favourites={favourites}
+                        setFavourites={setFavourites}
+                        user={user}
+                      />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/checkout"
+                  element={
+                    <ProtectedRoute>
+                      <Checkout cart={cart} user={user} />
+                    </ProtectedRoute>
+                  }
+                />
+                
+                {/* Profile Routes */}
+                <Route
+                  path="/profile/*"
+                  element={
+                    <ProtectedRoute>
+                      <div className="profile-page">
+                        <div className="profile-container">
+                          <Sidebar user={user} setUser={setUser} />
+                          <div className="profile-content">
+                            <Routes>
+                              <Route path="/" element={<Profile user={user} setUser={setUser} />} />
+                              <Route path="orders" element={<Orders user={user} />} />
+                              <Route path="manage-address" element={<ManageAddress user={user} />} />
+                              <Route path="pan-card" element={<PanCard user={user} />} />
+                              <Route path="gift-cards" element={<GiftCards user={user} />} />
+                              <Route path="saved-upi" element={<SavedUPI user={user} />} />
+                              <Route path="saved-cards" element={<SavedCards user={user} />} />
+                              <Route path="coupons" element={<Coupons user={user} />} />
+                              <Route path="reviews" element={<Reviews user={user} />} />
+                              <Route path="notifications" element={<Notifications user={user} />} />
+                              <Route 
+                                path="wishlist" 
+                                element={
+                                  <Wishlist 
+                                    user={user} 
+                                    favourites={favourites} 
+                                    setFavourites={setFavourites} 
+                                  />
+                                } 
+                              />
+                              <Route path="*" element={<div>Profile Section: Page Not Found</div>} />
+                            </Routes>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/checkout"
-                element={
-                  <ProtectedRoute>
-                    <Checkout cart={cart} user={user} />
-                  </ProtectedRoute>
-                }
-              />
-              <Route path="/" element={<Navigate to={user ? "/main" : "/login"} replace />} />
-              <Route path="*" element={<div>404 - Page Not Found</div>} />
-            </Routes>
-          </main>
+                    </ProtectedRoute>
+                  }
+                />
+                
+                {/* Default Routes */}
+                <Route path="/" element={<Navigate to={user ? "/main" : "/login"} replace />} />
+                <Route path="*" element={<div>404 - Page Not Found</div>} />
+              </Routes>
+            </main>
+          </div>
+          
+          {/* Footer - Only shown when user is logged in */}
           {user && <Footer />}
         </div>
       </RouterWrapper>

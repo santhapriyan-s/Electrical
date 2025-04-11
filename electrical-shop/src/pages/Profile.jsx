@@ -25,6 +25,7 @@ const Profile = ({ user, setUser, favourites, setFavourites }) => {
   const handleSave = () => {
     setUser((prev) => ({ ...prev, ...editForm }));
     setIsEditing(false);
+    alert("Profile updated successfully!");
   };
 
   const handleCancel = () => {
@@ -64,10 +65,11 @@ const Profile = ({ user, setUser, favourites, setFavourites }) => {
                 value={editForm.username}
                 onChange={handleEditChange}
                 placeholder="Your Username"
+                required
               />
             </div>
           ) : (
-            <p>{user.username || "N/A"}</p>
+            <p>{user.username || "Not set"}</p>
           )}
         </div>
 
@@ -82,10 +84,11 @@ const Profile = ({ user, setUser, favourites, setFavourites }) => {
                 value={editForm.email}
                 onChange={handleEditChange}
                 placeholder="Your Email"
+                required
               />
             </div>
           ) : (
-            <p>{user.email || "N/A"}</p>
+            <p>{user.email || "Not set"}</p>
           )}
         </div>
 
@@ -95,15 +98,17 @@ const Profile = ({ user, setUser, favourites, setFavourites }) => {
           {isEditing ? (
             <div className="form-group">
               <input
-                type="text"
+                type="tel"
                 name="mobile"
                 value={editForm.mobile}
                 onChange={handleEditChange}
                 placeholder="Your Mobile Number"
+                pattern="[0-9]{10}"
+                maxLength="10"
               />
             </div>
           ) : (
-            <p>{user.mobile || "N/A"}</p>
+            <p>{user.mobile || "Not set"}</p>
           )}
         </div>
 
@@ -132,10 +137,19 @@ const Profile = ({ user, setUser, favourites, setFavourites }) => {
 
       {isEditing && (
         <div className="form-action-buttons">
-          <button className="save-btn" onClick={handleSave}>
+          <button 
+            type="button" 
+            className="save-btn"
+            onClick={handleSave}
+            disabled={!editForm.username || !editForm.email}
+          >
             Save Changes
           </button>
-          <button className="cancel-btn" onClick={handleCancel}>
+          <button 
+            type="button" 
+            className="cancel-btn"
+            onClick={handleCancel}
+          >
             Cancel
           </button>
         </div>
@@ -144,16 +158,16 @@ const Profile = ({ user, setUser, favourites, setFavourites }) => {
       <div className="faq-section">
         <h4>FAQs</h4>
         <div className="faq-item">
-          <p>What happens when I update my profile information?</p>
+          <h5>What happens when I update my profile information?</h5>
           <p>Your account details will be updated immediately after saving. You'll receive all communications using your updated information.</p>
         </div>
         <div className="faq-item">
-          <p>When will my changes take effect?</p>
+          <h5>When will my changes take effect?</h5>
           <p>Changes take effect immediately after you click "Save Changes".</p>
         </div>
         <div className="faq-item">
-          <p>What happens to my existing account information?</p>
-          <p>Your previous information will be replaced with the new details you provide.</p>
+          <h5>Can I change my email address?</h5>
+          <p>Yes, you can update your email address, but you'll need to verify the new email before it becomes active.</p>
         </div>
       </div>
     </div>
